@@ -1,0 +1,4 @@
+D:\WinProgs\CLion\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" D:\Git\OBOPA\op1
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Git/OBOPA/op1/cmake-build-debug
