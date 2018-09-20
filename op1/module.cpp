@@ -7,25 +7,25 @@
 
 using namespace std;
 
-bool Module::SetTeacher(Teacher teacher)
+void Module::SetTeacher(Teacher teacher)
 {
     teacher = teacher;
 }
 
-bool Module::AddStudent(Student newStudent)
+void Module::AddStudent(Student newStudent)
 {
     students.push_back(newStudent);
 }
 
-bool Module::RemoveStudent(Student toRemove)
+void Module::RemoveStudent(Student toRemove)
 {
     // find student
     // remove it
 }
 
-bool Module::RemoveStudent(int toRemove)
+void Module::RemoveStudent(int toRemove)
 {
-    // remove at position
+    students.erase(students.begin() + toRemove);
 }
 
 void Module::PrintPeople()
