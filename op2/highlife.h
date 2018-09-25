@@ -1,5 +1,6 @@
 //
 // Created by fonst on Sep 25.
+// Life formula: 23/36
 //
 
 #pragma once
