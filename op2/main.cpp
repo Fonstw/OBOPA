@@ -1,8 +1,10 @@
 // ====== INCLUDES ======
 #include <iostream>
+#include <string>
 #include <time.h>
+#include <cstring>
 //#include <vector>
-#include "cell.h"
+#include "highlife.h"
 
 // ====== DEFINES ======
 #define GRID_SIZE 25
@@ -16,7 +18,7 @@ using namespace std;
 int currentGeneration = 0;
 
 // ====== CLASSES ======
-Cell grid[GRID_SIZE][GRID_SIZE];
+HighLifeCell grid[GRID_SIZE][GRID_SIZE];
 
 // ====== METHODS ======
 int CountNeighbours(int xPos, int yPos)
@@ -50,7 +52,7 @@ int CountNeighbours(int xPos, int yPos)
 void LiveAndDie()
 {
 	// 'Empty' grid to write in, for instantity's sake
-	Cell tempGrid[GRID_SIZE][GRID_SIZE];
+	HighLifeCell tempGrid[GRID_SIZE][GRID_SIZE];
 
 	for (int x=0; x<GRID_SIZE; x++)
 	{
