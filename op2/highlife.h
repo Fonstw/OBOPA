@@ -10,10 +10,9 @@ using namespace std;
 
 class HighLifeCell : public Cell
 {
-	protected:
-		vector<int> born {3, 6};
+public:
+	bool BornAgain(int neighbours) override;
 
-	public:
-		HighLifeCell();
-		bool BornAgain(int neighbours) override;
+protected:
+	vector<int> born {3, 6};
 };

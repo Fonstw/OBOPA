@@ -14,8 +14,8 @@ class Cell
 
 	public:
 		virtual ~Cell();
-		void SetAlive(bool state);
-		bool GetAlive();
-		bool DeadYet(int neighbours);
+		virtual void SetAlive(bool state);
+		virtual bool GetAlive();
+		virtual bool DeadYet(int neighbours);
 		virtual bool BornAgain(int neighbours);
 };

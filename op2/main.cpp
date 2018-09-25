@@ -2,7 +2,7 @@
 #include <iostream>
 #include <time.h>
 //#include <vector>
-#include "cell.h"
+#include "conwaycell.h"
 
 // ====== DEFINES ======
 #define GRID_SIZE 25
@@ -16,7 +16,7 @@ using namespace std;
 int currentGeneration = 0;
 
 // ====== CLASSES ======
-Cell grid[GRID_SIZE][GRID_SIZE];
+ConwayCell grid[GRID_SIZE][GRID_SIZE];
 
 // ====== METHODS ======
 int CountNeighbours(int xPos, int yPos)
