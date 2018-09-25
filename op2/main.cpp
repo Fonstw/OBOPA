@@ -1,13 +1,13 @@
 // ====== INCLUDES ======
 #include <iostream>
-#include <string>
 #include <time.h>
 //#include <vector>
 #include "cell.h"
 
 // ====== DEFINES ======
-#define GRID_SIZE 6
-#define ROUND_COUNT 24
+#define GRID_SIZE 25
+#define LAST_GENERATION 100
+#define DENSITY 3
 
 // ====== THIS THING ======
 using namespace std;
@@ -29,7 +29,7 @@ int CountNeighbours(int xPos, int yPos)
 		{
 			// Forgive me for the following if-else statement, I know there should be a better way but I can't find it
 			if (x == 0 && x == y) {}
-			else
+			else if (xPos + x >= 0 && xPos + x < GRID_SIZE && yPos + y >= 0 && yPos + y < GRID_SIZE)
 			{
 				if (grid[xPos + x][yPos + y].GetAlive())
 					neighbours++;
@@ -43,15 +43,14 @@ int CountNeighbours(int xPos, int yPos)
 void LiveAndDie()
 {
 	Cell tempGrid[GRID_SIZE][GRID_SIZE];
-	memcpy(tempGrid, grid, sizeof(grid));
 
 	for (int x=0; x<GRID_SIZE; x++)
 	{
 		for (int y=0; y<GRID_SIZE; y++)
 		{
-			if (tempGrid[x][y].DeadYet(CountNeighbours(x, y)))
+			if (grid[x][y].DeadYet(CountNeighbours(x, y)))
 				tempGrid[x][y].SetAlive(false);
-			else if (tempGrid[x][y].BornAgain(CountNeighbours(x, y)))
+			else if (grid[x][y].BornAgain(CountNeighbours(x, y)))
 				tempGrid[x][y].SetAlive(true);
 		}
 	}
@@ -84,10 +83,10 @@ int main()
 	for (auto &x : grid)
 	{
 		for (auto &y : x)
-			y.SetAlive(rand()%4 == 0);
+			y.SetAlive(rand()%DENSITY == 0);
 	}
 
-	while (currentGeneration < ROUND_COUNT)
+	while (currentGeneration < LAST_GENERATION)
 	{
 		cout<<"Generation: "<<currentGeneration<<endl;
 		PrintGrid();
