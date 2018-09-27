@@ -13,7 +13,7 @@ Person::Person(std::string newName)
     name = newName;
 }
 
-std::string Person::GetName()
+std::string Person::getName()
 {
     return name;
 }

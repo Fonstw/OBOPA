@@ -13,5 +13,5 @@ private:
 
 public:
     Person(std::string newName);
-    std::string GetName();
+    std::string getName();
 };

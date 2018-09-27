@@ -18,9 +18,9 @@ private:
     Teacher teacher;
 
 public:
-    void SetTeacher(Teacher teacher);
-    void AddStudent(Student newStudent);
-    void RemoveStudent(Student toRemove);
-    void RemoveStudent(int toRemove);
-    void PrintPeople();
+    void setTeacher(Teacher teacher);
+    void addStudent(Student newStudent);
+    void removeStudent(Student toRemove);
+    void removeStudent(int toRemove);
+    void printPeople();
 };
