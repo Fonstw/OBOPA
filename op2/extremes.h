@@ -15,7 +15,7 @@ using namespace std;
 class ExtremesCell : public Cell
 {
 public:
-	bool DeadYet(int neighbours) override;
+	bool deadYet(int neighbours) override;
 
 protected:
 	vector<int> life = {1, 6};

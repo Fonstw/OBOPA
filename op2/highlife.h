@@ -13,7 +13,7 @@ using namespace std;
 class HighLifeCell : public Cell
 {
 public:
-	bool BornAgain(int neighbours) override;
+	bool bornAgain(int neighbours) override;
 
 protected:
 	vector<int> born {3, 6};

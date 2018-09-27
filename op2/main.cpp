@@ -40,7 +40,7 @@ int CountNeighbours(int xPos, int yPos)
 			{
 				// Count that which lives (through the above we basically select all neighbours of which we then count
 				// what's alive)
-				if (grid[xPos + x][yPos + y].GetAlive())
+				if (grid[xPos + x][yPos + y].getAlive())
 					neighbours++;
 			}   // end else
 		}   // end y
@@ -59,13 +59,13 @@ void LiveAndDie()
 		for (int y=0; y<GRID_SIZE; y++)
 		{
 			// Is anything in the grid dead?
-			if (grid[x][y].DeadYet(CountNeighbours(x, y)))
+			if (grid[x][y].deadYet(CountNeighbours(x, y)))
 				// Say so in the writable grid
-				tempGrid[x][y].SetAlive(false);
+				tempGrid[x][y].setAlive(false);
 			// bla bla alive?
-			else if (grid[x][y].BornAgain(CountNeighbours(x, y)))
+			else if (grid[x][y].bornAgain(CountNeighbours(x, y)))
 				// bla bla writable grid
-				tempGrid[x][y].SetAlive(true);
+				tempGrid[x][y].setAlive(true);
 		}
 	}
 
@@ -81,7 +81,7 @@ void PrintGrid()
 		for (auto &y : x)
 		{
 			// Print X on live cells and . on dead cells
-			if (y.GetAlive())
+			if (y.getAlive())
 				cout<<"X";
 			else
 				cout<<".";
@@ -98,7 +98,7 @@ int main()
 	for (auto &x : grid)
 	{
 		for (auto &y : x)
-			y.SetAlive(rand()%DENSITY == 0);
+			y.setAlive(rand()%DENSITY == 0);
 	}
 
 	// The actual Conway's Game of Life'ing starts here!!
